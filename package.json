@@ -5,6 +5,10 @@
         "name": "Dmitriy Vornychev"
     },
     "publisher": "deitry",
+    "repository": {
+        "url": "https://github.com/deitry/vscode-aic",
+        "type": "git"
+    },
     "displayName": "advanced-installer-commands",
     "description": "Advanced Installer commads file syntax",
     "version": "0.0.1",
