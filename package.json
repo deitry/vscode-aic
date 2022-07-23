@@ -1,0 +1,25 @@
+{
+    "name": "advanced-installer-commands",
+    "displayName": "advanced-installer-commands",
+    "description": "Advanced Installer commads file syntax",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.69.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "aic",
+            "aliases": ["Advanced Installer commands", "aic"],
+            "extensions": [".aic"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "aic",
+            "scopeName": ".source.aic",
+            "path": "./syntaxes/aic.tmLanguage.json"
+        }]
+    }
+}
