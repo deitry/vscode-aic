@@ -1,5 +1,10 @@
 {
     "name": "advanced-installer-commands",
+    "author": {
+        "email": "dm.s.vornychev@gmail.com",
+        "name": "Dmitriy Vornychev"
+    },
+    "publisher": "deitry",
     "displayName": "advanced-installer-commands",
     "description": "Advanced Installer commads file syntax",
     "version": "0.0.1",
@@ -18,7 +23,7 @@
         }],
         "grammars": [{
             "language": "aic",
-            "scopeName": ".source.aic",
+            "scopeName": "source.aic",
             "path": "./syntaxes/aic.tmLanguage.json"
         }]
     }

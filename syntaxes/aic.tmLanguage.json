@@ -1,32 +1,138 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Advanced Installer commands",
+	"version": "https://github.com/textmate/ini.tmbundle/commit/2af0cbb0704940f967152616f2f1ff0aae6287a6",
+	"scopeName": "source.aic",
 	"patterns": [
 		{
 			"include": "#keywords"
 		},
 		{
-			"include": "#strings"
+			"begin": "(^[ \\t]+)?(?=#)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.whitespace.comment.leading.aic"
+				}
+			},
+			"end": "(?!\\G)",
+			"patterns": [
+				{
+					"begin": "#",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.aic"
+						}
+					},
+					"end": "\\n",
+					"name": "comment.line.number-sign.aic"
+				}
+			]
+		},
+		{
+			"begin": "^([ \\t]+)?(?=;)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.whitespace.comment.leading.aic"
+				}
+			},
+			"end": "(?!\\G)",
+			"patterns": [
+				{
+					"begin": ";",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.ini"
+						}
+					},
+					"end": "\\n",
+					"name": "comment.line.semicolon.ini"
+				}
+			]
+		},
+		{
+			"captures": {
+				"1": {
+					"name": "keyword.other.definition.aic"
+				},
+				"2": {
+					"name": "punctuation.separator.key-value.aic"
+				}
+			},
+			"match": "\\b([a-zA-Z0-9_.-]+)\\b\\s*(=)"
+		},
+		{
+			"captures": {
+				"1": {
+					"name": "punctuation.definition.entity.aic"
+				},
+				"3": {
+					"name": "punctuation.definition.entity.aic"
+				}
+			},
+			"match": "^(\\[)(.*?)(\\])",
+			"name": "entity.name.section.group-title.aic"
+		},
+		{
+			"begin": "'",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.aic"
+				}
+			},
+			"end": "'",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.end.aic"
+				}
+			},
+			"name": "string.quoted.single.aic",
+			"patterns": [
+				{
+					"match": "\\\\.",
+					"name": "constant.character.escape.aic"
+				}
+			]
+		},
+		{
+			"begin": "\"",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.aic"
+				}
+			},
+			"end": "\"",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.end.aic"
+				}
+			},
+			"name": "string.quoted.double.aic"
 		}
 	],
 	"repository": {
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.aic",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.aic",
-			"begin": "\"",
-			"end": "\"",
 			"patterns": [
 				{
-					"name": "constant.character.escape.aic",
-					"match": "\\\\."
+					"name": "comment.block.documentation",
+					"match": ";aic"
+				},
+				{
+					"name": "entity.name.function",
+					"match": "\\b(Set)(AesPassword|Appdir|AzureKeyVaultSecret|Bitmap|Version|Property|ProductCode)\\b"
+				},
+				{
+					"name": "keyword.control",
+					"match": "\\b(Save|Rebuild)\\b"
+				},
+				{
+					"name": "variable",
+					"match": "%([a-zA-Z_][a-zA-Z_0-9]*)%"
+				},
+				{
+					"name": "entity.name.function",
+					"match": "\\s*\\b(((Add|Del)(Temp)?)|Update|Register)(File(Permission|Association)?)\\b"
 				}
 			]
 		}
-	},
-	"scopeName": ".source.aic"
+	}
 }
