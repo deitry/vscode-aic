@@ -118,7 +118,7 @@
 				},
 				{
 					"name": "entity.name.function",
-					"match": "\\b(Set)(AesPassword|Appdir|AzureKeyVaultSecret|Bitmap|Version|Property|ProductCode)\\b"
+					"match": "\\b(Set)(AesPassword|Appdir|AzureKeyVaultSecret|Bitmap|Version|Property|ProductCode|DigitalCertificate(File|Password))\\b"
 				},
 				{
 					"name": "keyword.control",
